@@ -35,7 +35,7 @@
                 <!--add-->
                 <div class="card">
                     <div class="card-body">
-                        <button class="btn btn-success" style="float: right;">Ajouter</button>
+                        <button class="btn btn-success" style="float: right;" (click)="openAdd()">Ajouter</button>
                     </div></div>
               <div class="card">
                   <div class="card-body">
@@ -64,11 +64,11 @@
                                           {{cat.date}}
                                       </td>
                                       <td>
-                                          {{cat.nom}}
+                                          {{cat.categorie}}
                                       </td>
                                       <td>
-                                          <button class="btn btn-info">Modifier</button>
-                                          <button class="btn btn-danger">Supprimer</button>
+                                          <button class="btn btn-info" (click)="openUpdate()">Modifier</button>
+                                          <button class="btn btn-danger " (click)="delete()">Supprimer</button>
                                           
                                       </td>
                                     

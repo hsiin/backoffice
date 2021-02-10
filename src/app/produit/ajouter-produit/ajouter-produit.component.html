@@ -1,0 +1,83 @@
+<div class="md-dialog-container">
+    <h2 style="text-align: center;">Ajouter Produit</h2>
+<form>
+    <div class="form-group">
+      <label for="exampleFormControlSelectcat">Catégorie :</label>
+      <select class="form-control" id="exampleFormControlSelectcat" aria-placeholder="Nom de Catégorie">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Nom de produit :</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nom de produit">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelectFourni">Catégorie :</label>
+        <select class="form-control" id="exampleFormControlSelectFourni" aria-placeholder="Nom de Fournisseur">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInputValeur">Nom de produit :</label>
+        <input type="email" class="form-control" id="exampleFormControlInputValeur" placeholder="00%">
+      </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description :</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+
+    <div class="image-upload">
+    
+      <div class="form-group">
+
+          
+          <img class="image" *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px; " (click)="remove()">
+          
+           
+        
+        <label for="file">
+          <img src="../../assets/img/plusIcon.webp" style="cursor: pointer;" class="bro" />
+        </label>
+        <input 
+        style="display: none;  "
+        formControlName="file"
+        id="file" 
+        type="file" 
+        class="form-control"     
+        (change)="onFileChange($event)">  
+    <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+        <div *ngIf="f.file.errors.required">File is required.</div>
+    </div>
+  </div>
+  
+  
+     </div>  
+
+    
+
+    <!--BR-->
+
+    
+
+  <a class="btn btn-danger" (click)="removeImage()" *ngIf="isImageSaved">Remove</a>
+
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <button type="submit" class="btn btn-info">Enregistrer</button>
+</div>
+
+  </form>
+</div>
+

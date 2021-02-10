@@ -1,0 +1,132 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                  <!--There is a problem here-->
+                  <div class="card-body">
+                    <h3>Rechercer</h3>
+                    <form>
+                        <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Id" class="form-control">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nom" type="text"class="form-control">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Date" type="date"class="form-control">
+                                  </mat-form-field>
+                              </div >  
+                          <hr>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    
+                                    <select matNativeControl required class="form-control">
+                                      <option *ngFor="let cat of data" aria-placeholder="Categorie">{{cat.categorie}}</option>
+                                    </select>
+                                  </mat-form-field>
+                                </div>  
+                                <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Prix" type="text"class="form-control">
+                                    </mat-form-field>     
+                                </div>       
+                                                                                          
+                          
+                          </div>
+                          <button class="btn btn-danger" type="reset">Annuler</button>
+                          <button class="btn btn-success" type="submit" >Chercer</button>      
+                        </div>
+ 
+                    </form>
+                    <div style="float: right;">
+                           
+                    </div>
+                </div>
+            </div>
+  
+                  <!--add-->
+                  <div class="card">
+                      <div class="card-body">
+                          <button class="btn btn-success" style="float: right;" (click)="openAjout()">Ajouter Produit</button>
+                          
+                          <button class="btn btn-success" style="float: right; margin-right:20px ;" (click)="Ajoutcat()">Ajouter Catégorie</button>
+                      </div></div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Réf
+                                    </th>
+                                    <th>
+                                        Image                                        
+                                    </th>
+                                    <th>
+                                        Date de création
+                                    </th>
+                                    <th>
+                                        Produit
+                                    </th>
+                                    <th>
+                                        Catégorie
+                                    </th>
+                                    <th>
+                                        Fournisseur
+                                    </th>
+                                    <th>
+                                        Prix
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let cat of data"  style="cursor: pointer;">
+                                        <td>
+                                            {{cat.ref}}
+                                        </td>
+                                        <td>
+                                            <img src="{{cat.image}}" alt="image de produit" style="width: 50px;">                                           
+                                        </td>
+                                        <td>
+                                            {{cat.date}}
+                                        </td>
+                                        <td>
+                                            {{cat.produit}}
+                                        </td>
+                                        <td>
+                                            {{cat.categorie}}
+                                        </td>
+                                        <td>
+                                            {{cat.fourni}}
+                                        </td>
+                                        <td>
+                                            {{cat.prix}}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-info" (click)="openUpdate(cat)">Modifier</button>
+                                            <button class="btn btn-danger"(click)="delete(cat)">Supprimer</button>
+                                            <button class="btn btn-primary" (click)="clicked(cat)">Voir détail</button>                                           
+                                        </td>
+                                      
+                                    </tr>
+  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

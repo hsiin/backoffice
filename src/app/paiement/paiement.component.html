@@ -1,0 +1,130 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <!--There is a problem here-->
+                    <div class="card-body">
+                        <h3>Filtrer résultat</h3>
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Id" class="form-control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Nom Client" type="text" class="form-control">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="E-mail" type="email" class="form-control">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+
+                                    <div class="col-md-3">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Solde" type="text" class="form-control">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Date" type="date" class="form-control">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-1">
+                                        <input matInput type="radio" id="all" name="filter">
+                                        <label for="all" style="margin-left: 6px;"><b>Tout</b></label>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input matInput type="radio" id="notyet" name="filter">
+                                        <label for="notyet" style="margin-left: 6px;"><b>En attente</b></label>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input matInput type="radio" id="done" name="filter">
+                                        <label for="done" style="margin-left: 6px;"><b>Succées</b></label>
+                                    </div>
+                                    <div class="col-md-7">
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button class="btn btn-danger" type="reset"
+                                            style="margin-right: 10px;">Annuler</button>
+                                        <button class="btn btn-success" type="submit">Chercer</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Réf
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Nom Transaction
+                                    </th>
+                                    <th>
+                                        Client
+                                    </th>
+                                    <th>
+                                        Enchére
+                                    </th>
+                                    <th>
+                                        Produit
+                                    </th>
+                                    <th>
+                                        Etat
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let pai of data" style="cursor: pointer;">
+                                        <td>
+                                            {{pai.ref}}
+                                        </td>
+                                        <td>
+                                            {{ pai.date }}
+                                        </td>
+                                        <td>
+                                            {{ pai.num }}
+                                        </td>
+                                        <td>
+                                            {{ pai.client }}
+                                        </td>
+                                        <td>
+                                            {{ pai.enchere }}
+                                        </td>
+                                        <td>
+                                            {{ pai.produit }}
+                                        </td>
+                                        <td>
+                                            {{ pai.etat }}
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

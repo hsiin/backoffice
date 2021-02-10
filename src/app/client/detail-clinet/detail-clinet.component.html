@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="main-content">
+    <div class="container-fluid">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <div>
+            <h3>{{ data.nom }}</h3>
+          </div>
+          <div class="row" style="margin-left: 3px">
+            <div class="col-md-12">
+              <div class="info">
+                <b>E-mail: </b>
+                <p>{{ data.email }}</p>
+              </div>
+              <div class="info">
+                <b>Phone: </b>
+                <p>{{ data.phone }}</p>
+              </div>
+              <div class="info">
+                <b>Date d'inscription: </b>
+                <p>{{ data.date }}</p>
+              </div>
+              <div class="info">
+                <b>Adresse: </b>
+                <p>{{ data.adresse }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+          "
+        >
+          <img src="{{ data.image }}" alt="sd" width="200px" />
+
+          <b></b>
+          <b>Solde</b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <th>Réf</th>
+                    <th>Date</th>
+                    <th>Enchére</th>
+                    <th>Produit</th>
+                    <th>Click</th>
+                    <th>Encaissement</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cat of data.ench" style="cursor: pointer">
+                      <td>
+                        {{ cat.ref }}
+                      </td>
+                      <td>
+                        {{ cat.date }}
+                      </td>
+                      <td>
+                          {{ cat.enchere }}
+                      </td>
+                      <td>
+                        {{ cat.produit }}
+                      </td>
+                      <td>
+                        {{ cat.click }}
+                      </td>
+                      <td>
+                          {{ cat.encaissement}}
+                      </td>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

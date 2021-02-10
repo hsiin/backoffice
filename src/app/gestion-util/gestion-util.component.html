@@ -1,0 +1,91 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                  <!--There is a problem here-->
+                  <div class="card-body">
+                    <h3>Filtrer résultat</h3>
+                    <form>
+                        <div class="form-group">
+                          <div class="row">
+                              <div class="col-md-2">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Id" class="form-control">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-2">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nom Client" type="text"class="form-control">
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-2">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="E-mail" type="email"class="form-control">
+                                </mat-form-field>
+                             </div>
+                             <div class="col-md-4"></div>
+                             <div class="col-md-2">
+                                <button class="btn btn-danger" type="reset" style="margin-right: 10px;">Annuler</button>
+                                <button class="btn btn-success" type="submit" >Chercer</button>
+                            </div>
+                            </div>
+                        </div>
+ 
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <button class="btn btn-success" style="float: right;" (click)="openAjout()">Ajouter
+                        Utilisateur</button>
+                </div>
+            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Réf
+                                    </th>
+                                    <th>
+                                        Nom d'utilsateur
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of data"  style="cursor: pointer;">
+                                        <td>
+                                            {{user.ref}}
+                                        </td>
+                                        <td>
+                                            {{user.name}}
+                                        </td>
+                                        <td>
+                                            {{user.email}}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-info" (click)="openUpdate()">Modifier</button>
+                                            <button class="btn btn-danger"(click)="delete(user)">Supprimer</button>
+                                            <button class="btn btn-primary" (click)="detail()">Voir détail</button>
+                                            
+                                        </td>
+                                      
+                                    </tr>
+  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
